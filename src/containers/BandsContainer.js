@@ -9,10 +9,10 @@ class BandsContainer extends Component {
   render() {
     return(
       <div>
-        BandsContainer
-        <hr/>
+        <h4>Add Band name: </h4>
+
         <BandInput addBand={this.props.addBand} />
-        <br/>
+        <hr/>
         <BandsList bands={this.props.bands} />
       </div>
     )
