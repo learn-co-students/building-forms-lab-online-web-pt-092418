@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BandInput from '../components/BandInput'
+import BandsList from './BandsList'
 
 class BandsContainer extends Component {
   render() {
@@ -8,6 +9,8 @@ class BandsContainer extends Component {
         BandsContainer
         <hr/>
         <BandInput />
+        <br/>
+        <BandsList />
       </div>
     )
   }
