@@ -5,7 +5,10 @@ class BandInput extends Component {
   render() {
     return(
       <div>
-        Band Input
+        <form>
+          <label>Band Name<input type='text'/></label>
+          <input type="submit" />
+        </form>
       </div>
     )
   }
