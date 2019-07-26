@@ -18,10 +18,11 @@ class BandsList extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    bands: state.bands
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     bands: state.bands
+//   }
+// }
 
-export default connect(mapStateToProps)(BandsList)
+// export default connect(mapStateToProps)(BandsList)
+export default BandsList
