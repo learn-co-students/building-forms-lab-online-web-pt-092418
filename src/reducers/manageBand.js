@@ -1,5 +1,13 @@
+import { ADD_BAND } from '../actions/bands';
+
 export default function manageBand(state = {
   bands: [],
 }, action) {
-  return state
+  switch(action.type){
+  case ADD_BAND:
+    return [...state, action.input]
+ default:
+   
+  return state;
+  }
 };
