@@ -3,9 +3,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 class BandInput extends Component {
-  state = {
-    band: ''
+  constructor(){
+    super()
+    this.state = {
+      name: ''
   }
+    
 
   handleOnChange = event => {
     this.setState({
@@ -14,18 +17,21 @@ class BandInput extends Component {
   }
   handleOnSubmit = event => {
     event.preventDefault();
+    this.props.addBandToParent(this.state.band)
   }
+  //onSubmit={() => this.props.onSubmit( this.state.band)}
   
   render() {
+    console.log(this.state)
     return(
       <div>
         
         <form onSubmit={this.handleOnSubmit}>
           band input:
-          <textarea 
-            name="imput"
+          <input
+            name="band"
             value={this.state.band}
-            onChange={(event) => this.handleOnChange(event)}
+            onChange={this.handleOnChange}
           />
           <button type="submit" >
 
@@ -35,8 +41,6 @@ class BandInput extends Component {
     )
   }
 }
-const mapDispatchToProps = dispatch => {
-  addBand: formData => dispatch ({type: 'ADD_BAND', payload:formData})
-}
 
-export default connect(null, mapDispatchToProps)(BandInput);
+
+export default (BandInput);
