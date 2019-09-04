@@ -5,23 +5,26 @@ import {addBand} from '../actions/bands';
 
 class BandsContainer extends Component {
   takeInBandFromChild = (name) => {
-    this.props.addBand(name)
+    this.props.addBand({name})
   }
-  render() {
+    render() {
+      const bandList = this.props.bands.map(band => <li>{band.name}</li>);
     return(
       <div>
+        <ul>
+          {bandList}
+        </ul>
         
-        
-        < BandInput addBandToParent={this.takeInBandFromChild}/>
+        <BandInput addBandToParent={(name) => this.takeInBandFromChild(name)}/>
       </div>
     )
-  }
+  };
 }
 
 
 
 const mapStateToProps = (state) =>{
-  return {name: state.name};
+  return {bands: state.bands};
 }
 // const mapDispatchToProps = dispatch => { 
 //  return  {addBand: formData => dispatch({type: 'ADD_BAND', payload:formData})}
