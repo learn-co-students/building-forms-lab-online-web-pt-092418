@@ -1,7 +1,7 @@
 
 
 export default function manageBand(state = {
-  bands: [],
+  name: [],
 }, action) {
   debugger
   switch(action.type){

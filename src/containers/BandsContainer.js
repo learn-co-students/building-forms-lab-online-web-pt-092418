@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import {addBand} from '../actions/bands';
 
 class BandsContainer extends Component {
-  takeInBandFromChild = (band) => {
-    this.props.addBand(band)
+  takeInBandFromChild = (name) => {
+    this.props.addBand(name)
   }
   render() {
     return(
@@ -21,7 +21,7 @@ class BandsContainer extends Component {
 
 
 const mapStateToProps = (state) =>{
-  return {band: state.band};
+  return {name: state.name};
 }
 // const mapDispatchToProps = dispatch => { 
 //  return  {addBand: formData => dispatch({type: 'ADD_BAND', payload:formData})}
